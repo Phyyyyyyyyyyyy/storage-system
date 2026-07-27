@@ -1,22 +1,23 @@
 <?php
 
-$host = "localhost";
+$host = "127.0.0.1";
+$port = "3307";
 $dbname = "storage_db";
-$username = "root";
-$password = "";
+$user = "root";
+$pass = "";
 
 try {
 
     $pdo = new PDO(
-        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
-        $username,
-        $password
+        "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4",
+        $user,
+        $pass
     );
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-} catch(PDOException $e){
+} catch (PDOException $e) {
 
-    die("Database Connection Failed : " . $e->getMessage());
+    die($e->getMessage());
 
 }
