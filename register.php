@@ -15,7 +15,7 @@ if (isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Register - Storage Management System</title>
+    <title>Register | Storage Management System</title>
 
     <link rel="stylesheet" href="assets/css/login.css">
 
@@ -25,21 +25,23 @@ if (isset($_SESSION['user_id'])) {
 
 <div class="login-box">
 
-    <div class="img-logo">
-        <img src="assets/images/carton-logo.png" alt="Logo">
-    </div>
+    <div style="display:flex; justify-content:center; margin-bottom:20px;">
+    <img
+        src="assets/images/carton-logo.png"
+        alt="Storage Logo"
+        style="width:180px; height:auto;"
+    >
+</div>
 
     <h1>Create Account</h1>
 
-    <?php
-    if(isset($_GET['error'])){
-        echo "<p class='error'>" . htmlspecialchars($_GET['error']) . "</p>";
-    }
+    <?php if(isset($_GET['error'])): ?>
 
-    if(isset($_GET['success'])){
-        echo "<p class='success'>Account created successfully. You may now login.</p>";
-    }
-    ?>
+        <p class="error">
+            <?= htmlspecialchars($_GET['error']) ?>
+        </p>
+
+    <?php endif; ?>
 
     <form action="actions/register.php" method="POST">
 
@@ -71,27 +73,21 @@ if (isset($_SESSION['user_id'])) {
             required
         >
 
-        <!-- Remove this if you don't want users choosing roles -->
-        <select name="role">
-
-            <option value="staff">Staff</option>
-            <option value="admin">Admin</option>
-
-        </select>
-
         <button type="submit">
             Register
         </button>
 
     </form>
 
-    <p style="margin-top:20px;text-align:center;">
-        Already have an account?
-    </p>
+    <div class="login-link">
 
-    <a href="login.php" class="register-btn">
-        Login
-    </a>
+        Already have an account?
+
+        <a href="login.php">
+            Login
+        </a>
+
+    </div>
 
 </div>
 

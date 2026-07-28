@@ -12,12 +12,12 @@ if (isset($_SESSION['user_id'])) {
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Storage Management System</title>
+    <title>Storage Management System</title>
 
-<link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/login.css">
 
 </head>
 
@@ -25,16 +25,23 @@ if (isset($_SESSION['user_id'])) {
 
 <div class="login-box">
 
-    <div class = "img-logo">
-        <img src = "assets/images/carton-logo.png" width = "250px" height = "250px" object-align: center >
-
-    </div>
+    <div style="display:flex; justify-content:center; margin-bottom:20px;">
+    <img
+        src="assets/images/carton-logo.png"
+        alt="Storage Logo"
+        style="width:180px; height:auto;"
+    >
+</div>
 
     <h1>Storage Management</h1>
 
     <?php
     if(isset($_GET['error'])){
         echo "<p class='error'>Invalid username or password.</p>";
+    }
+
+    if(isset($_GET['registered'])){
+        echo "<p class='success'>Registration successful! You may now log in.</p>";
     }
     ?>
 
@@ -55,23 +62,23 @@ if (isset($_SESSION['user_id'])) {
         >
 
         <button type="submit">
-
             Login
-
         </button>
 
-        <p style = "margin-top:20px; text-align:center;">
-            Don't have an account?
-            <a href = "register.php" class = "register-btn">
-            Register
-            </a>
-        </p>       
-
-        
-
     </form>
+
+    <div class="login-link">
+
+        Don't have an account?
+
+        <a href="register.php">
+            Register
+        </a>
+
+    </div>
 
 </div>
 
 </body>
+
 </html>
