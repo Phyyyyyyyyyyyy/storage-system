@@ -25,9 +25,10 @@
         Suppliers
     </a>
 
-    <a href="../logout.php">
-        <i class="fas fa-right-from-bracket"></i>
-        Logout
-    </a>
+    <a href="../logout.php"
+   onclick="return confirm('Are you sure you want to log out?');">
+    <i class="fas fa-right-from-bracket"></i>
+    Logout
+</a>
 
 </div>
