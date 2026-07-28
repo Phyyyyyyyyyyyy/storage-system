@@ -26,7 +26,8 @@ if (isset($_SESSION['user_id'])) {
 <div class="login-box">
 
     <div class = "img-logo">
-    
+        <img src = "assets/images/carton-logo.png" width = "250px" height = "250px" object-align: center >
+
     </div>
 
     <h1>Storage Management</h1>
@@ -64,7 +65,7 @@ if (isset($_SESSION['user_id'])) {
             <a href = "register.php" class = "register-btn">
             Register
             </a>
-        </p>        /* register-btn area*/
+        </p>       
 
         
 
