@@ -1,10 +1,12 @@
 <?php
-require_once "includes/auth.php";
-require_once "config/database.php";
-require_once "includes/header.php";
+
+require_once "../includes/auth.php";
+require_once "../config/database.php";
+require_once "../includes/header.php";
+
 ?>
 
-<?php require_once "includes/sidebar.php"; ?>
+<?php require_once "../includes/sidebar.php"; ?>
 
 <div class="main-content">
 
@@ -15,7 +17,7 @@ require_once "includes/header.php";
         <div class="user">
 
             Welcome,
-            <strong><?php echo htmlspecialchars($_SESSION["username"]); ?></strong>
+            <strong><?= htmlspecialchars($_SESSION["username"]) ?></strong>
 
         </div>
 
@@ -24,27 +26,55 @@ require_once "includes/header.php";
     <div class="cards">
 
         <div class="card">
+
             <h2>Total Items</h2>
-            <p>0</p>
+
+            <?php
+            $totalItems = $pdo->query("SELECT COUNT(*) FROM items")->fetchColumn();
+            ?>
+
+            <p><?= $totalItems ?></p>
+
         </div>
 
         <div class="card">
+
             <h2>Categories</h2>
-            <p>0</p>
+
+            <?php
+            $totalCategories = $pdo->query("SELECT COUNT(*) FROM categories")->fetchColumn();
+            ?>
+
+            <p><?= $totalCategories ?></p>
+
         </div>
 
         <div class="card">
+
             <h2>Suppliers</h2>
-            <p>0</p>
+
+            <?php
+            $totalSuppliers = $pdo->query("SELECT COUNT(*) FROM suppliers")->fetchColumn();
+            ?>
+
+            <p><?= $totalSuppliers ?></p>
+
         </div>
 
         <div class="card">
-            <h2>Low Stock</h2>
-            <p>0</p>
+
+            <h2>Users</h2>
+
+            <?php
+            $totalUsers = $pdo->query("SELECT COUNT(*) FROM users")->fetchColumn();
+            ?>
+
+            <p><?= $totalUsers ?></p>
+
         </div>
 
     </div>
 
 </div>
 
-<?php require_once "includes/footer.php"; ?>
+<?php require_once "../includes/footer.php"; ?>

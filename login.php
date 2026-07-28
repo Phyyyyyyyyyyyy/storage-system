@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['user_id'])) {
-    header("Location: dashboard.php");
+    header("Location: pages/dashboard.php");
     exit();
 }
 ?>
@@ -12,12 +12,12 @@ if (isset($_SESSION['user_id'])) {
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Storage Management System</title>
+<title>Storage Management System</title>
 
-    <link rel="stylesheet" href="assets/css/login.css">
+<link rel="stylesheet" href="assets/css/login.css">
 
 </head>
 
@@ -25,60 +25,54 @@ if (isset($_SESSION['user_id'])) {
 
 <div class="login-box">
 
-    <div style="display:flex; justify-content:center; margin-bottom:20px;">
-    <img
-        src="assets/images/carton-logo.png"
-        alt="Storage Logo"
-        style="width:180px; height:auto;"
-    >
+<div style="display:flex;justify-content:center;margin-bottom:15px;">
+    <img src="assets/images/carton-logo.png"
+         alt="Logo"
+         style="width:170px;height:auto;">
 </div>
 
-    <h1>Storage Management</h1>
+<h1>Storage Management</h1>
 
-    <?php
-    if(isset($_GET['error'])){
-        echo "<p class='error'>Invalid username or password.</p>";
-    }
+<?php
+if(isset($_GET['error'])){
+    echo "<p class='error'>Invalid username or password.</p>";
+}
+?>
 
-    if(isset($_GET['registered'])){
-        echo "<p class='success'>Registration successful! You may now log in.</p>";
-    }
-    ?>
+<form action="actions/login.php" method="POST">
 
-    <form action="actions/login.php" method="POST">
+<input
+type="text"
+name="username"
+placeholder="Username"
+required>
 
-        <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            required
-        >
+<input
+type="password"
+name="password"
+placeholder="Password"
+required>
 
-        <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            required
-        >
+<button type="submit">
 
-        <button type="submit">
-            Login
-        </button>
+Login
 
-    </form>
+</button>
 
-    <div class="login-link">
+</form>
 
-        Don't have an account?
+<p style="text-align:center;margin-top:20px;">
+Don't have an account?
 
-        <a href="register.php">
-            Register
-        </a>
+<a href="register.php">
 
-    </div>
+Register
+
+</a>
+
+</p>
 
 </div>
 
 </body>
-
 </html>

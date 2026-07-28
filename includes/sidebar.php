@@ -1,44 +1,32 @@
 <div class="sidebar">
 
-    <h2>Storage</h2>
+    <h2>
+        <i class="fas fa-box"></i>
+        Storage System
+    </h2>
 
     <a href="dashboard.php">
-        <i class="fa-solid fa-house"></i>
+        <i class="fas fa-chart-line"></i>
         Dashboard
     </a>
 
-    <a href="pages/items.php">
-        <i class="fa-solid fa-box"></i>
+    <a href="items.php">
+        <i class="fas fa-boxes"></i>
         Items
     </a>
 
-    <a href="pages/categories.php">
-        <i class="fa-solid fa-layer-group"></i>
+    <a href="categories.php">
+        <i class="fas fa-tags"></i>
         Categories
     </a>
 
-    <a href="pages/suppliers.php">
-        <i class="fa-solid fa-truck"></i>
+    <a href="suppliers.php">
+        <i class="fas fa-truck"></i>
         Suppliers
     </a>
 
-    <a href="pages/transactions.php">
-        <i class="fa-solid fa-right-left"></i>
-        Transactions
-    </a>
-
-    <a href="pages/reports.php">
-        <i class="fa-solid fa-chart-column"></i>
-        Reports
-    </a>
-
-    <a href="pages/users.php">
-        <i class="fa-solid fa-users"></i>
-        Users
-    </a>
-
-    <a href="logout.php">
-        <i class="fa-solid fa-right-from-bracket"></i>
+    <a href="../logout.php">
+        <i class="fas fa-right-from-bracket"></i>
         Logout
     </a>
 
