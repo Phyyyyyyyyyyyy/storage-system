@@ -25,6 +25,10 @@ if (isset($_SESSION['user_id'])) {
 
 <div class="login-box">
 
+    <div class = "img-logo">
+    
+    </div>
+
     <h1>Storage Management</h1>
 
     <?php
@@ -54,6 +58,15 @@ if (isset($_SESSION['user_id'])) {
             Login
 
         </button>
+
+        <p style = "margin-top:20px; text-align:center;">
+            Don't have an account?
+            <a href = "register.php" class = "register-btn">
+            Register
+            </a>
+        </p>        /* register-btn area*/
+
+        
 
     </form>
 
