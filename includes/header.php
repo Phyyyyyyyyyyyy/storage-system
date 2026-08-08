@@ -4,31 +4,13 @@
 
 <head>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggleSwitch = document.getElementById('themeToggle');
-            
-            // 1. Check local storage for saved theme
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') {
-                document.body.classList.add('dark-mode');
-                if(toggleSwitch) toggleSwitch.checked = true;
-            }
+    <meta charset="UTF-8">
 
-            // 2. Handle toggle change event
-            if (toggleSwitch) {
-                toggleSwitch.addEventListener('change', function() {
-                    if(this.checked) {
-                        document.body.classList.add('dark-mode');
-                        localStorage.setItem('theme', 'dark');
-                    } else {
-                        document.body.classList.remove('dark-mode');
-                        localStorage.setItem('theme', 'light');
-                    }
-                });
-            }
-        });
-    </script>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <script src="../assets/js/theme.js"></script>
 </head>
 
 <body>

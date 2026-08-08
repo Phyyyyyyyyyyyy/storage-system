@@ -31,6 +31,8 @@ if(!$supplier){
 
 <link rel="stylesheet" href="../assets/css/dashboard.css">
 
+<script src="../assets/js/theme.js"></script>
+
 </head>
 
 <body>

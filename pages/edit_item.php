@@ -31,6 +31,8 @@ $suppliers = $pdo->query("SELECT id, supplier_name FROM suppliers ORDER BY suppl
     <meta charset="UTF-8">
     <title>Edit Item</title>
     <link rel="stylesheet" href="../assets/css/dashboard.css">
+<script src="../assets/js/theme.js"></script>
+
 </head>
 <body>
 <?php require "../includes/sidebar.php"; ?>
