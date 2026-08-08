@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard — Theme Toggle Demo</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="assets/js/theme.js"></script>
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+        <h2>
+            <i class="fas fa-box"></i>
+            Storage System
+        </h2>
+
+        <a href="#"><i class="fas fa-chart-line"></i> Dashboard</a>
+        <a href="#"><i class="fas fa-boxes"></i> Items</a>
+        <a href="#"><i class="fas fa-tags"></i> Categories</a>
+        <a href="#"><i class="fas fa-truck"></i> Suppliers</a>
+        <a href="#"><i class="fas fa-right-from-bracket"></i> Logout</a>
+
+        <!-- ====== THEME TOGGLE SWITCH ====== -->
+        <div style="margin-top: 30px; border-top: 1px solid #374151; padding-top: 20px; display: flex; align-items: center; justify-content: space-between;">
+            <span style="color: #9ca3af; font-size: 14px;">
+                <i class="fas fa-moon" id="themeIconSmall" style="margin-right: 5px;"></i> Theme
+            </span>
+
+            <label class="theme-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
+                <input type="checkbox" id="themeToggle" style="opacity: 0; width: 0; height: 0;">
+                <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #4b5563; transition: .4s; border-radius: 24px;"></span>
+                <span style="position: absolute; cursor: pointer; content: ''; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%;"></span>
+                <i class="fas fa-sun" style="position: absolute; left: 5px; top: 4px; color: #fbbf24; font-size: 12px; pointer-events: none;"></i>
+                <i class="fas fa-moon" style="position: absolute; right: 5px; top: 4px; color: #e5e7eb; font-size: 12px; pointer-events: none;"></i>
+            </label>
+        </div>
+
+    </div>
+
+    <div class="main-content">
+
+        <div class="topbar">
+            <h1>Dashboard</h1>
+            <div class="user">Welcome, <strong>Demo User</strong></div>
+        </div>
+
+        <div class="cards">
+            <div class="card"><h2>Total Items</h2><p>128</p></div>
+            <div class="card"><h2>Categories</h2><p>12</p></div>
+            <div class="card"><h2>Suppliers</h2><p>7</p></div>
+            <div class="card"><h2>Users</h2><p>4</p></div>
+        </div>
+
+        <table class="table">
+            <tr><th>Item</th><th>Category</th><th>Qty</th></tr>
+            <tr><td>Steel Bolts</td><td>Hardware</td><td>500</td></tr>
+            <tr><td>Copper Wire</td><td>Electrical</td><td>1200</td></tr>
+        </table>
+
+    </div>
+
+</body>
+</html>
