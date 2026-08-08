@@ -212,12 +212,94 @@ body.dark-mode .table tr:hover{
     background:#273245;
 }
 
-.theme-switch input:checked ~ span:first-of-type{
+.theme-toggle-row{
+    margin-top:30px;
+    border-top:1px solid #374151;
+    padding-top:20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.theme-toggle-label{
+    color:#9ca3af;
+    font-size:14px;
+}
+
+.theme-toggle-label i{
+    margin-right:5px;
+}
+
+.theme-switch{
+    position:relative;
+    display:inline-block;
+    width:44px;
+    height:24px;
+}
+
+.theme-switch input{
+    opacity:0;
+    width:0;
+    height:0;
+}
+
+.theme-switch .track{
+    position:absolute;
+    cursor:pointer;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#4b5563;
+    transition:.4s;
+    border-radius:24px;
+}
+
+.theme-switch .knob{
+    position:absolute;
+    cursor:pointer;
+    top:3px;
+    left:3px;
+    height:18px;
+    width:18px;
+    background-color:white;
+    border-radius:50%;
+    transition:.4s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.theme-switch .knob i{
+    position:absolute;
+    font-size:10px;
+    pointer-events:none;
+}
+
+.theme-switch .knob .icon-sun{
+    color:#fbbf24;
+    display:block;
+}
+
+.theme-switch .knob .icon-moon{
+    color:#475569;
+    display:none;
+}
+
+.theme-switch input:checked ~ .track{
     background-color:#2563eb;
 }
 
-.theme-switch input:checked ~ span:nth-of-type(2){
+.theme-switch input:checked ~ .knob{
     transform:translateX(20px);
+}
+
+.theme-switch input:checked ~ .knob .icon-sun{
+    display:none;
+}
+
+.theme-switch input:checked ~ .knob .icon-moon{
+    display:block;
 }
 
 /* ====== ALERT BANNERS ====== */
