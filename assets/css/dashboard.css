@@ -219,3 +219,69 @@ body.dark-mode .table tr:hover{
 .theme-switch input:checked ~ span:nth-of-type(2){
     transform:translateX(20px);
 }
+
+/* ====== ALERT BANNERS ====== */
+.alert{
+    padding:10px;
+    border-radius:5px;
+    margin-bottom:15px;
+}
+
+.alert-success{
+    color:#16a34a;
+    background:#e6f7e6;
+}
+
+.alert-error{
+    color:#dc2626;
+    background:#fde8e8;
+}
+
+body.dark-mode .alert-success{
+    color:#4ade80;
+    background:#14361f;
+}
+
+body.dark-mode .alert-error{
+    color:#f87171;
+    background:#3a1616;
+}
+
+/* ====== LOW STOCK HIGHLIGHT ====== */
+.low-stock{
+    background:#fff3cd;
+    color:#664d03;
+}
+
+body.dark-mode .low-stock{
+    background:#3a2f0b;
+    color:#fde68a;
+}
+
+body.dark-mode .low-stock:hover{
+    background:#4a3c0e;
+}
+
+/* ====== EMPTY STATE ====== */
+.empty-state{
+    text-align:center;
+    padding:30px;
+    color:#666;
+}
+
+body.dark-mode .empty-state{
+    color:#9ca3af;
+}
+
+/* ====== ACTION BUTTONS (edit/delete) ====== */
+.btn-edit{
+    background:#2563eb;
+    padding:4px 10px;
+    font-size:12px;
+}
+
+.btn-delete{
+    background:#dc2626;
+    padding:4px 10px;
+    font-size:12px;
+}

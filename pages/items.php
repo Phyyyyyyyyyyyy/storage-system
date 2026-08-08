@@ -30,12 +30,12 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <?php if(isset($_GET['success'])): ?>
-        <p style="color: #16a34a; background: #e6f7e6; padding: 10px; border-radius: 5px;">
+        <p class="alert alert-success">
             <?= htmlspecialchars($_GET['success']) ?>
         </p>
     <?php endif; ?>
     <?php if(isset($_GET['error'])): ?>
-        <p style="color: #dc2626; background: #fde8e8; padding: 10px; border-radius: 5px;">
+        <p class="alert alert-error">
             <?= htmlspecialchars($_GET['error']) ?>
         </p>
     <?php endif; ?>
@@ -58,7 +58,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <tbody>
         <?php if(count($items) > 0): ?>
             <?php foreach($items as $item): ?>
-                <tr style="<?= ($item['quantity'] <= $item['minimum_stock']) ? 'background:#fff3cd;' : '' ?>">
+                <tr class="<?= ($item['quantity'] <= $item['minimum_stock']) ? 'low-stock' : '' ?>">
                     <td><?= $item["id"] ?></td>
                     <td><?= htmlspecialchars($item["item_name"]) ?></td>
                     <td><?= htmlspecialchars($item["sku"]) ?></td>
@@ -69,12 +69,12 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <td><?= htmlspecialchars($item["unit"] ?? "-") ?></td>
                     <td>$<?= number_format($item["unit_price"], 2) ?></td>
                     <td>
-                        <a href="edit_item.php?id=<?= $item["id"] ?>" class="btn" style="background:#2563eb; padding:4px 10px; font-size:12px;">
+                        <a href="edit_item.php?id=<?= $item["id"] ?>" class="btn btn-edit">
                             <i class="fas fa-edit"></i> Edit
                         </a>
                         <a href="../actions/delete_item.php?id=<?= $item["id"] ?>"
                            onclick="return confirm('Delete this item?');"
-                           class="btn" style="background:#dc2626; padding:4px 10px; font-size:12px;">
+                           class="btn btn-delete">
                             <i class="fas fa-trash"></i> Delete
                         </a>
                     </td>
@@ -82,7 +82,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endforeach; ?>
         <?php else: ?>
             <tr>
-                <td colspan="10" style="text-align:center; padding:30px; color:#666;">
+                <td colspan="10" class="empty-state">
                     No items found. <a href="add_item.php">Add your first item</a>.
                 </td>
             </tr>

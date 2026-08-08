@@ -44,7 +44,7 @@ $suppliers = $pdo->query("SELECT id, supplier_name FROM suppliers ORDER BY suppl
     </div>
 
     <?php if(isset($_GET['error'])): ?>
-        <p style="color:#dc2626; background:#fde8e8; padding:10px; border-radius:5px;">
+        <p class="alert alert-error">
             <?= htmlspecialchars($_GET['error']) ?>
         </p>
     <?php endif; ?>
