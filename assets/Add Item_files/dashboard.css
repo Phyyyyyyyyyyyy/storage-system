@@ -169,3 +169,32 @@ body{
 .table .btn{
     margin-right:5px;
 }
+
+/* ===== THEME TOGGLE SWITCH CSS ===== */
+.theme-switch input:checked + span {
+    background-color: #3b82f6;
+}
+
+.theme-switch input:checked + span + i.fa-sun {
+    display: none;
+}
+
+.theme-switch input:checked + span + i.fa-sun + i.fa-moon {
+    display: none;
+}
+
+.theme-switch input:checked + span + i.fa-sun ~ i.fa-moon {
+    display: block;
+}
+
+.theme-switch input:not(:checked) + span + i.fa-sun {
+    display: block;
+}
+
+.theme-switch input:not(:checked) + span + i.fa-sun ~ i.fa-moon {
+    display: none;
+}
+
+.theme-switch input:checked + span::after {
+    transform: translateX(20px);
+}
