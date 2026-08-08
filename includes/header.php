@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 
-    <meta charset="UTF-8">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleSwitch = document.getElementById('themeToggle');
+            
+            // 1. Check local storage for saved theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                if(toggleSwitch) toggleSwitch.checked = true;
+            }
 
-    <title>Storage Management System</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="../assets/css/dashboard.css">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+            // 2. Handle toggle change event
+            if (toggleSwitch) {
+                toggleSwitch.addEventListener('change', function() {
+                    if(this.checked) {
+                        document.body.classList.add('dark-mode');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        document.body.classList.remove('dark-mode');
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+            }
+        });
+    </script>
 </head>
 
 <body>
